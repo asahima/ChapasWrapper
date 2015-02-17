@@ -1,9 +1,10 @@
 # coding: utf-8
 
 from Chapas import Chapas
+from config import CHAPAS_PATH
 
 def main():
-    chapas = Chapas("~/Downloads/chapas-0.742/chapas.jar")
+    chapas = Chapas(CHAPAS_PATH)
     result = chapas.parse("./sample.txt")
     
     for items in result:

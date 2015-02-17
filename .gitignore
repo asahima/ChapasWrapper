@@ -56,3 +56,4 @@ target/
 # chapas
 chapas.jar
 sample.txt
+src/config.py
