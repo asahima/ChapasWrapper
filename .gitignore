@@ -57,3 +57,9 @@ target/
 chapas.jar
 sample.txt
 src/config.py
+info.py
+lib/*
+version.py
+setup.py
+requirements.txt
+src/__init__.py

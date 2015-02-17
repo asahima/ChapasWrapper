@@ -11,8 +11,8 @@ class Chapas(object):
     def __init__(self, chapas_pass):
         self.chapas_pass = chapas_pass
 
-    def parse(self, target_file):
-        cmd = "cat {} | java -jar {} -I RAW".format(target_file, self.chapas_pass)
+    def parse(self, target, ptype):
+        cmd = "{} {} | java -jar {} -I RAW".format(ptype, target, self.chapas_pass)
         output = subprocess.check_output(cmd, shell=True).split("\n")
 
         objs = []
