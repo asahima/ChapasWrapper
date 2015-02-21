@@ -12,7 +12,7 @@ class ChaPAS(object):
     def __init__(self, chapas_pass, options = "-I RAW"):
         self.chapas_pass = chapas_pass
         self.options = options
-
+    
     def parse(self, target, ptype):
         assert self.__is_valid_cmd(ptype), \
                 "invalid value of ptype: {}, correct: 'file', 'text'".format(ptype)

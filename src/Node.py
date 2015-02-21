@@ -11,11 +11,13 @@ class Node(object):
         self.ga_case = ""
         self.ni_case = ""
         self.read = ""
+        self.default = ""
 
     def __str__(self):
-        return "surface: {}, pos: {}, type: {}, o: {}, ga: {}, id: {}".format(
+        return "surface: {}, pos: {}, default: {}, type: {}, o: {}, ga: {}, id: {}".format(
             self.surface,
             self.pos,
+            self.default,
             self.stype,
             self.o_case,
             self.ga_case,
@@ -37,6 +39,7 @@ class NodeFactory(object):
         node.surface = elem[0]
         parse = elem[1].split(",")
         node.pos = parse[0]
+        node.default = parse[6]
         
         if len(elem) > 2:
             cls.__check(elem, node)
