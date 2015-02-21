@@ -9,18 +9,19 @@ from config import CHAPAS_PATH
 
 import argparse
 
-def main(mode, text):
+def main(mode, target):
     chapas = ChaPAS(CHAPAS_PATH)
-    result = chapas.parse(text, mode)
+    result = chapas.parse(target, mode)
     
     for items in result:
         for item in items:
             print(item)
+        print("*****************************")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", "-m", type=str, help='parser mode')
-    parser.add_argument("--text", "-t", type=str, default="")
+    parser.add_argument("--target", "-t", type=str, default="")
 
     args = parser.parse_args()
-    main(args.mode, args.text)
+    main(args.mode, args.target)

@@ -9,13 +9,20 @@ import subprocess
 from Node import NodeFactory
 
 class ChaPAS(object):
-    def __init__(self, chapas_pass):
+    def __init__(self, chapas_pass, options = "-I RAW"):
         self.chapas_pass = chapas_pass
+        self.options = options
 
     def parse(self, target, ptype):
-        assert self.__is_valid_cmd(ptype)
+        assert self.__is_valid_cmd(ptype), \
+                "invalid value of ptype: {}, correct: 'file', 'text'".format(ptype)
         ptype = "cat" if ptype == "file" else "echo"
-        cmd = "{} {} | java -jar {} -I RAW".format(ptype, target, self.chapas_pass)
+        cmd = "{} {} | java -jar {} {}".format(
+                                             ptype,
+                                             target,
+                                             self.chapas_pass,
+                                             self.options
+                                             )
         output = subprocess.check_output(cmd, shell=True).split("\n")
 
         objs = []
