@@ -1,2 +1,2 @@
-# ChapasWrapper
-Chapasの出力をparseするやつ
+# chapas-python
+chapas wrapper for python

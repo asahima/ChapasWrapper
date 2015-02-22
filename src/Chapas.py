@@ -2,11 +2,10 @@
 # coding: utf-8
 
 from __future__ import print_function
+from Node import NodeFactory
 
 import re
 import subprocess
-
-from Node import NodeFactory
 
 class ChaPAS(object):
     def __init__(self, chapas_pass, options = "-I RAW"):
