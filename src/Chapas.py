@@ -12,12 +12,8 @@ class ChaPAS(object):
         self.chapas_pass = chapas_pass
         self.options = options
     
-    def parse(self, target, ptype):
-        assert self.__is_valid_cmd(ptype), \
-                "invalid value of ptype: {}, correct: 'file', 'text'".format(ptype)
-        ptype = "cat" if ptype == "file" else "echo"
-        cmd = "{} {} | java -jar {} {}".format(
-                                             ptype,
+    def parse(self, target):
+        cmd = "echo {} | java -jar {} {}".format(
                                              target,
                                              self.chapas_pass,
                                              self.options
