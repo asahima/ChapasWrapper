@@ -1,10 +1,9 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-
 from __future__ import print_function
 
-from ChaPAS import ChaPAS
+from chapas import ChaPAS
 from config import CHAPAS_PATH
 
 import argparse

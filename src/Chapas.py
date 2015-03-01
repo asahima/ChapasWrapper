@@ -2,7 +2,7 @@
 # coding: utf-8
 
 from __future__ import print_function
-from Node import NodeFactory
+from node import NodeFactory
 
 import re
 import subprocess
@@ -37,6 +37,3 @@ class ChaPAS(object):
                 obj.append(re.split("\s+", line))
 
         return objs
-
-    def __is_valid_cmd(self, cmd):
-        return True if cmd == "file" or cmd == "text" else False
